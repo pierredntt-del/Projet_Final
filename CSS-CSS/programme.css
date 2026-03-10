@@ -1,0 +1,596 @@
+/* ===== VARIABLES ===== */
+:root {
+    --primary-color: #003366;
+    --secondary-color: #ffd700;
+    --accent-color: #c41e3a;
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #fff;
+    --bg-light: #f8f9fa;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* ===== HEADER & NAVIGATION (MENM AK INDEX) ===== */
+.navbar {
+    background: var(--primary-color);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+/* Logo pi gwo ak santre */
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Lis navigasyon santre */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    flex: 2;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ===== MAIN - 90% LAJÈ ===== */
+main {
+    width: 90%;
+    max-width: 1400px;
+    margin: 100px auto 0;
+    padding: 0;
+}
+
+/* ===== CORPS SECTION ===== */
+#corps {
+    padding: 2rem 0;
+}
+
+/* Tit seksyon */
+#corps .text {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#corps .text h3 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+
+
+#corps  h4 {
+    color: var(--text-dark);
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    text-align: left;
+    border-left: 5px solid var(--secondary-color);
+    padding-left: 1rem;
+}
+
+/* Card Groups - PLIS ESPAS */
+.card-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;  /* Plis espas ant cards */
+    margin-bottom: 3rem;  /* Plis espas anba */
+}
+
+/* Cards individuelles */
+.card {
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imaj cards - BORDER RADIUS */
+.card-img-top {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;  
+    transition: var(--transition);
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.8rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.card-text {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+/* Boutons */
+.card-body button,
+.card-body .btn {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+    width: fit-content;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.card-body button a,
+.card-body .btn a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.card-body button:hover,
+.card-body .btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.card-body button:hover a,
+.card-body .btn:hover a {
+    color: var(--primary-color);
+}
+
+/* Dènye card la (Sciences Infirmière) */
+#corps > .card {
+    width: 100%;
+    max-width: 400px;
+    margin: 2rem auto 3rem;  
+}
+
+/* Row cards pou 2 an yo */
+.row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;  /* Plis espas */
+    margin: 2rem 0;
+}
+
+.row .col {
+    width: 100%;
+}
+
+.row .card {
+    height: 100%;
+}
+
+/* ===== NOUVEAU FOOTER STYLE ===== */
+.footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1.5rem 5% 0.5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Kolòn 1 */
+.footer-col h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.footer-col .subtitle {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.footer-col .description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
+}
+
+.footer-col .phone {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.footer-col .phone i {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* Tit kolòn */
+.footer-col h4 {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+/* Lyen yo */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.4rem;
+}
+
+.footer-col ul li a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+    opacity: 0.8;
+    font-size: 0.85rem;
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+    padding-left: 5px;
+}
+
+/* Kontak info */
+.footer-col .contact-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    opacity: 0.8;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.footer-col .contact-info li i {
+    color: var(--secondary-color);
+    min-width: 18px;
+    margin-top: 2px;
+    font-size: 0.85rem;
+}
+
+/* Copyright santre */
+.copyright {
+    text-align: center;
+    padding: 0.8rem 0 0.3rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+
+/* Tablets (768px - 992px) */
+@media screen and (max-width: 992px) {
+    .logo img {
+        height: 70px;
+    }
+    
+    .card-group {
+        grid-template-columns: repeat(2, 1fr);  /* 2 kolòn sou tablet */
+        gap: 2rem;
+    }
+    
+    main {
+        width: 95%;
+        margin-top: 90px;
+    }
+    
+    #corps .text h3 {
+        font-size: 2.2rem;
+    }
+    
+    #corps .text h4 {
+        font-size: 1.6rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .footer-container .footer-col:last-child {
+        grid-column: span 2;
+    }
+}
+
+/* Mobile (moins de 768px) */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 5%;
+        z-index: 1001;
+    }
+    
+    .navbar {
+        justify-content: center;
+        position: relative;
+    }
+    
+    .logo {
+        flex: 0 1 auto;
+        margin: 0 auto;
+    }
+    
+    .logo img {
+        height: 60px;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        gap: 0;
+    }
+    
+    .nav-links.show {
+        display: flex;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 1rem;
+        border-radius: 0;
+    }
+    
+    /* Main */
+    main {
+        width: 100%;
+        margin-top: 80px;
+        padding: 0 15px;
+    }
+    
+    /* Cards */
+    .card-group {
+        grid-template-columns: 1fr;  /* 1 kolòn sou mobile */
+        gap: 2rem;
+    }
+    
+    .row {
+        grid-template-columns: 1fr;  /* 1 kolòn sou mobile */
+        gap: 2rem;
+    }
+    
+    .card-img-top {
+        height: 200px;
+    }
+    
+    /* Tit */
+    #corps .text h3 {
+        font-size: 2rem;
+    }
+    
+    #corps .text h4 {
+        font-size: 1.4rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 1rem 4% 0.3rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-container .footer-col:last-child {
+        grid-column: auto;
+    }
+    
+    .footer-col {
+        text-align: center;
+    }
+    
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+    }
+    
+    .footer-col .phone {
+        justify-content: center;
+    }
+    
+    .footer-col .contact-info li {
+        justify-content: center;
+    }
+    
+    .copyright {
+        padding: 0.6rem 0 0.2rem;
+        margin-top: 0.8rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Petits mobiles (moins de 480px) */
+@media screen and (max-width: 480px) {
+    .logo img {
+        height: 50px;
+        border-radius: 8px;
+    }
+    
+    .card-img-top {
+        height: 180px;
+    }
+    
+    .card-body {
+        padding: 1.2rem;
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+    
+    #corps .text h3 {
+        font-size: 1.8rem;
+    }
+    
+    #corps .text h4 {
+        font-size: 1.3rem;
+    }
+    
+    .footer {
+        padding: 0.8rem 3% 0.2rem;
+    }
+    
+    .footer-col h3 {
+        font-size: 1.3rem;
+    }
+    
+    .footer-col h4 {
+        font-size: 1rem;
+    }
+    
+    .copyright {
+        font-size: 0.65rem;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#corps {
+    animation: fadeIn 1s ease-out;
+}
+
+/* ===== UTILITAIRES ===== */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-light {
+    background: var(--bg-light) !important;
+}
+
+.shadow {
+    box-shadow: var(--shadow) !important;
+}
+
+.rounded {
+    border-radius: 10px !important;
+}

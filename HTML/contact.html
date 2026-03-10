@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <link rel="stylesheet" href="../CSS-CSS/Admission.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT-Universite de Technologie d'd’Haïti</title>
+</head>
+
+<body class=".container-main">
+    <header>
+
+        <nav class="navbar fixed-top" >
+
+            <div class="logo">
+                <img src="../Imaje/Unitech.jpg" alt="Logo UNITECH">
+            </div>
+
+            <div class="menu-toggle" id="menu-toggle">
+                ☰
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+
+                <li><a href="../HTML/index.html">Accueil</a></li>
+                <li><a href="../HTML/a_propos.html">A Propos</a></li>
+                <li><a href="../HTML/programmes.html">Programmes</a></li>
+                <li><a href="../HTML/admission.html">Admission</a></li>
+                <li><a href="../HTML/contact.html">Contact</a></li>
+                <li><a href="../HTML/Galerie.html">Galerie</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main>
+
+    </main>
+    <footer class="footer">
+
+    <div class="uni">
+      <h5>UNITECH <sub>Université de technologie d'd’Haïti</sub></h5>
+      <p>Nous Construisons l'avenir !</p>
+    </div>
+
+    <div class="lien">
+      <ul>
+        <li><a href="../HTML/index.html">Accueil</a></li>
+        <li><a href="../HTML/a_propos.html">A Propos</a></li>
+        <li><a href="../HTML/programmes.html">Programmes</a></li>
+        <li><a href="../HTML/admission.html">Admission</a></li>
+        <li><a href="../HTML/contact.html">Contact</a></li>
+        <li><a href="../HTML/Galerie.html">Galerie</a></li>
+      </ul>
+    </div>
+    <section class="contact py-5">
+      <div class="container text-center">
+
+        <h2 class="mb-4">Contactez-nous</h2>
+
+        <div class="contact-info d-flex flex-column flex-md-row justify-content-center gap-4">
+
+          <div class="info-item p-3 bg-light rounded shadow">
+            <i class="fas fa-envelope fa-2x mb-2 text-primary"></i>
+            <p><a href="mailto:info@unitech.edu.ht">info@unitech.edu.ht</a></p>
+          </div>
+
+          <div class="info-item p-3 bg-light rounded shadow">
+            <i class="fas fa-phone fa-2x mb-2 text-primary"></i>
+            <p><a href="tel:+50936937605"> (+509) 3806 - 3945 / 3693 - 7605</a></p>
+          </div>
+
+          <div class="info-item p-3 bg-light rounded shadow">
+            <i class="fas fa-map-marker-alt fa-2x mb-2 text-primary"></i>
+            <p> 123 Rte de Freres, Petion-Ville</p>
+            <p>171, Boulevard des 4 Chemins, Cayes Sud, Haïti</p>
+
+          </div>
+
+        </div>
+      </div>
+     <br>
+        <div class="social-icons mt-2">
+          <a href="https://www.facebook.com/Unitech53" target="_blank" class="text-white me-3">
+            <i class="fab fa-facebook-f fa-lg"></i>
+          </a>
+          <a href="https://www.instagram.com/Université de technologie d'Haïti" target="_blank" class="text-white">
+            <i class="fab fa-instagram fa-lg"></i>
+          </a>
+        </div>
+    
+    </section>
+      <div class="text-center py-3">
+
+        &copy; <span id="currentYear"></span> 2026 Université de Technologie d’Haïti (UNITECH). Tous droits réservés.
+      </div>
+ 
+
+
+  </footer>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script>
+
+        const menuToggle = document.querySelector("#menu-toggle");
+        const navLinks = document.querySelector("#nav-links");
+
+        menuToggle.addEventListener("click", function () {
+            navLinks.classList.toggle("show");
+        });
+    </script>
+</body>
+
+</html>

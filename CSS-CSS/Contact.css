@@ -1,0 +1,197 @@
+:root {
+    --primary-color: #003366;
+    --secondary-color: #ffd700;
+    --accent-color: #c41e3a;
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #fff;
+    --bg-light: #f8f9fa;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+
+.navbar {
+    background: var(--primary-color);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+/* Logo pi gwo ak santre */
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    height: 80px;  /* Ogmante soti 50px a 80px */
+    width: auto;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+/* Lis navigasyon santre tou */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    flex: 2;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+footer.footer {
+   background-color: #000000f2;
+  color: white;
+  padding: 20px 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+footer.footer > .uni:first-child {
+  border-left: 4px solid #ffd700;
+  padding-left: 10px;
+}
+
+footer.footer .uni h5 {
+  margin-bottom: 5px;
+}
+
+footer.footer .uni sub {
+  font-size: 12px;
+  color: #ffd700;
+}
+
+footer.footer .uni p {
+  font-size: 14px;
+}
+
+footer.footer .lien ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+footer.footer .lien ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+footer.footer .lien ul li a:hover {
+  color: #ffd700;
+}
+
+footer.footer .contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer.footer .contact-info .info-item {
+  background: white;
+  color: #0a4da2;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+footer.footer .social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+footer.footer .social-icons a {
+  color: white;
+  font-size: 20px;
+  transition: color 0.2s;
+}
+
+footer.footer .social-icons a:hover {
+  color: #ffd700;
+}
+
+footer.footer .text-center {
+  width: 100%;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+/* Container principal */
+
+
+.nav-links{
+display:none;
+flex-direction:column;
+width:100%;
+background:#0a2a66;
+margin-top:10px;
+}
+
+.nav-links li{
+padding:10px;
+}
+
+.nav-links.show{
+display:flex;
+}
+
+}

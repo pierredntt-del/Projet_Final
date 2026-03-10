@@ -1,0 +1,677 @@
+/* ===== VARIABLES ===== */
+:root {
+    --primary-color: #003366;
+    --secondary-color: #ffd700;
+    --accent-color: #c41e3a;
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #fff;
+    --bg-light: #f8f9fa;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+.navbar {
+    background: var(--primary-color);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    height: 80px;
+    width: auto;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    flex: 2;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+.nav-links a:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ===== MAIN ===== */
+main {
+    width: 90%;
+    max-width: 1400px;
+    margin: 100px auto 0;
+    padding: 2rem 0;
+    background: rgba(217, 227, 237, 0.299);
+}
+
+/* ===== PARAGRAPHES ===== */
+.paragraphe {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.paragraphe p {
+    flex: 1;
+    padding: 2rem;
+    border-radius: 15px;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-dark);
+    box-shadow: var(--shadow);
+    text-align: justify;
+}
+
+.paragraphe p:first-child {
+
+    background: linear-gradient(to left, var(--bg-light), transparent);
+    border-right: 5px solid var(--secondary-color);
+}
+
+.paragraphe p:last-child {
+    background: linear-gradient(to right, var(--bg-light), transparent);
+    border-left: 5px solid var(--secondary-color);
+}
+
+/* ===== ETAPES ADMISSION - YOUN KOTE LOT ===== */
+main > h3 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin: 3rem 0 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+main > h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+/* Container pou etapes yo */
+.etapes-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Retire style bootstrap par defo */
+.etapes-container .row {
+    display: contents;
+}
+
+.etapes-container .col-sm-6 {
+    width: 100%;
+    padding: 0;
+}
+
+/* Cards yo */
+.etapes-container .card {
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    height: 100%;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.etapes-container .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+}
+
+.etapes-container .card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--secondary-color);
+}
+
+.etapes-container .card-body {
+    padding: 1.5rem;
+}
+
+.etapes-container .card-title {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.etapes-container .card-title strong {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
+}
+
+.etapes-container .card-text {
+    color: var(--text-light);
+    margin: 0;
+}
+
+
+
+/* ===== FORMULAIRE SANTRE ===== */
+#form-gauche {
+    max-width: 800px;
+    margin: 3rem auto 4rem;  /* auto pou santre */
+    background: rgb(161, 180, 202);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    border-left: 5px solid var(--primary-color);
+    border-right: 5px solid var(--secondary-color);
+}
+
+#form-gauche form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+#form-gauche h4 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+#form-gauche h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+#form-gauche label {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+}
+
+#form-gauche input,
+#form-gauche select,
+#form-gauche textarea {
+    padding: 0.8rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: var(--transition);
+    width: 100%;
+}
+
+#form-gauche input:focus,
+#form-gauche select:focus,
+#form-gauche textarea:focus {
+    outline: none;
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+}
+
+#form-gauche input[type="file"] {
+    padding: 0.5rem;
+    border: 2px dashed var(--primary-color);
+    background: var(--bg-light);
+}
+
+#form-gauche textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+#form-gauche input[type="reset"],
+#form-gauche input[type="submit"] {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-top: 0.5rem;
+    border-radius: 8px;
+}
+
+#form-gauche input[type="reset"]:hover,
+#form-gauche input[type="submit"]:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+#form-gauche input[type="reset"] {
+    background: #dc3545;
+}
+
+#form-gauche input[type="reset"]:hover {
+    background: #ff6b6b;
+}
+
+#form-gauche p {
+    text-align: center;
+    color: var(--primary-color);
+    font-weight: 500;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: var(--bg-light);
+    border-radius: 8px;
+    font-size: 1.1rem;
+}
+
+/* ===== NOUVEAU FOOTER STYLE ===== */
+.footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1.5rem 5% 0.5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Kolòn 1 */
+.footer-col h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.footer-col .subtitle {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.footer-col .description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
+}
+
+.footer-col .phone {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.footer-col .phone i {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* Tit kolòn */
+.footer-col h4 {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+/* Lyen yo */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.4rem;
+}
+
+.footer-col ul li a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+    opacity: 0.8;
+    font-size: 0.85rem;
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+    padding-left: 5px;
+}
+
+/* Kontak info */
+.footer-col .contact-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    opacity: 0.8;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.footer-col .contact-info li i {
+    color: var(--secondary-color);
+    min-width: 18px;
+    margin-top: 2px;
+    font-size: 0.85rem;
+}
+
+/* Copyright santre */
+.copyright {
+    text-align: center;
+    padding: 0.8rem 0 0.3rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablets */
+@media screen and (max-width: 992px) {
+    .logo img {
+        height: 70px;
+    }
+    
+    main {
+        width: 95%;
+        margin-top: 90px;
+    }
+    
+    .paragraphe {
+        gap: 1.5rem;
+    }
+    
+    .paragraphe p {
+        padding: 1.5rem;
+    }
+    
+    .etapes-container {
+        gap: 1.5rem;
+    }
+    
+    #form-gauche {
+        max-width: 90%;
+        padding: 2rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .footer-container .footer-col:last-child {
+        grid-column: span 2;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    /* Navigation */
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 5%;
+        z-index: 1001;
+    }
+    
+    .navbar {
+        justify-content: center;
+        position: relative;
+    }
+    
+    .logo {
+        flex: 0 1 auto;
+        margin: 0 auto;
+    }
+    
+    .logo img {
+        height: 60px;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+        gap: 0;
+    }
+    
+    .nav-links.show {
+        display: flex;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 1rem;
+        border-radius: 0;
+    }
+    
+    /* Main */
+    main {
+        width: 100%;
+        margin-top: 80px;
+        padding: 1rem;
+    }
+    
+    /* Paragraphes */
+    .paragraphe {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    
+    .paragraphe p {
+        text-align: left !important;
+        border-right: none !important;
+        border-left: 5px solid var(--secondary-color) !important;
+    }
+    
+    /* Etapes - vin an kolòn sou mobile */
+    .etapes-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .etape1, .etape2, .etape3, .etape4 {
+        grid-area: auto;
+    }
+    
+    /* Formulaire */
+    #form-gauche {
+        max-width: 100%;
+        margin: 2rem 0;
+        padding: 1.5rem;
+    }
+    
+    #form-gauche h4 {
+        font-size: 1.5rem;
+    }
+    
+    #form-gauche input,
+    #form-gauche select,
+    #form-gauche textarea {
+        padding: 0.6rem;
+    }
+    
+    /* Footer */
+    .footer {
+        padding: 1rem 4% 0.3rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-container .footer-col:last-child {
+        grid-column: auto;
+    }
+    
+    .footer-col {
+        text-align: center;
+    }
+    
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+    }
+    
+    .footer-col .phone {
+        justify-content: center;
+    }
+    
+    .footer-col .contact-info li {
+        justify-content: center;
+    }
+    
+    .copyright {
+        padding: 0.6rem 0 0.2rem;
+        margin-top: 0.8rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Ti mobile */
+@media screen and (max-width: 480px) {
+    .logo img {
+        height: 50px;
+    }
+    
+    .paragraphe p {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    
+    #form-gauche {
+        padding: 1rem;
+    }
+    
+    #form-gauche h4 {
+        font-size: 1.3rem;
+    }
+    
+    .footer {
+        padding: 0.8rem 3% 0.2rem;
+    }
+    
+    .footer-col h3 {
+        font-size: 1.3rem;
+    }
+    
+    .footer-col h4 {
+        font-size: 1rem;
+    }
+    
+    .copyright {
+        font-size: 0.65rem;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+main {
+    animation: fadeIn 1s ease-out;
+}

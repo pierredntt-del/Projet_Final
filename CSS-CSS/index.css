@@ -1,0 +1,669 @@
+/* ===== VARIABLES ===== */
+:root {
+    --primary-color: #003366;
+    --secondary-color: #ffd700;
+    --accent-color: #c41e3a;
+    --text-dark: #333;
+    --text-light: #666;
+    --white: #fff;
+    --bg-light: #f8f9fa;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+}
+
+/* ===== HEADER & NAVIGATION ===== */
+.navbar {
+    background: var(--primary-color);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow);
+    height: 90px;
+}
+
+.logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.logo img {
+    height: 70px;
+    width: auto;
+    border-radius: 10px;
+    transition: var(--transition);
+}
+
+.logo img:hover {
+    transform: scale(1.05);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+    flex: 2;
+    justify-content: center;
+}
+
+.nav-links a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    padding: 0.4rem 0.8rem;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+    color: var(--white);
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* ===== MAIN ===== */
+main {
+    width: 90%;
+    max-width: 1400px;
+    margin: 100px auto 0;
+    padding: 1.5rem 0;
+    min-height: 400px;
+}
+
+/* ===== HERO SECTION ===== */
+.Hero {
+    margin-top: 80px;
+}
+
+.carousel-item img {
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+.carousel-caption {
+    background: rgba(0, 51, 102, 0.7);
+    border-radius: 10px;
+    padding: 1rem;
+    bottom: 50px;
+}
+
+.carousel-caption h5 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+
+/* ===== PRESENTATION SECTION ===== */
+.Presentation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    padding: 4rem 5%;
+    background: var(--bg-light);
+}
+
+.Histoire, .Facultes {
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.Histoire h2, .Facultes h2 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.Facultes button {
+    margin-top: 1.5rem;
+    padding: 0.8rem 2rem;
+    border: none;
+    background: var(--primary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.Facultes button:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.Facultes button a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.Facultes button:hover a {
+    color: var(--primary-color);
+}
+
+/* ===== CHOISIR SECTION ===== */
+.Choisir {
+    padding: 4rem 5%;
+    text-align: center;
+    background: linear-gradient(135deg, var(--primary-color), #002244);
+    color: var(--white);
+}
+
+.Choisir h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.choix-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.choix {
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    transition: var(--transition);
+}
+
+.choix:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.choix h3 {
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+}
+
+/* ===== STATS SECTION ===== */
+.stats {
+    padding: 4rem 5%;
+    background: var(--bg-light);
+    text-align: center;
+}
+
+.stats h2 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.stat {
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.stat i {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.stat h3 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+/* ===== NOUVEAU FOOTER STYLE ===== */
+.footer {
+    background: var(--primary-color);
+    color: var(--white);
+    padding: 1.5rem 5% 0.5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Kolòn 1 */
+.footer-col h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin-bottom: 0.3rem;
+}
+
+.footer-col .subtitle {
+    font-size: 0.8rem;
+    opacity: 0.9;
+    margin-bottom: 0.5rem;
+}
+
+.footer-col .description {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
+    opacity: 0.8;
+}
+
+.footer-col .phone {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-bottom: 0.3rem;
+    font-size: 1rem;
+}
+
+.footer-col .phone i {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+}
+
+/* Tit kolòn */
+.footer-col h4 {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    padding-bottom: 0.3rem;
+}
+
+.footer-col h4::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background: var(--secondary-color);
+}
+
+/* Lyen yo */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 0.4rem;
+}
+
+.footer-col ul li a {
+    color: var(--white);
+    text-decoration: none;
+    transition: var(--transition);
+    opacity: 0.8;
+    font-size: 0.85rem;
+}
+
+.footer-col ul li a:hover {
+    opacity: 1;
+    color: var(--secondary-color);
+    padding-left: 5px;
+}
+
+/* Kontak info */
+.footer-col .contact-info li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    opacity: 0.8;
+    font-size: 0.8rem;
+    margin-bottom: 0.4rem;
+}
+
+.footer-col .contact-info li i {
+    color: var(--secondary-color);
+    min-width: 18px;
+    margin-top: 2px;
+    font-size: 0.85rem;
+}
+
+/* Copyright santre */
+.copyright {
+    text-align: center;
+    padding: 0.8rem 0 0.3rem;
+    margin-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.75rem;
+    opacity: 0.7;
+}
+
+/* ===== RESPONSIVE POU FOOTER ===== */
+
+/* Tablets */
+@media screen and (max-width: 992px) {
+    .logo img {
+        height: 60px;
+    }
+    
+    .navbar {
+        height: 80px;
+    }
+    
+    main {
+        width: 95%;
+        margin-top: 90px;
+    }
+    
+    .Presentation {
+        grid-template-columns: 1fr;
+        padding: 3rem 5%;
+    }
+    
+    .carousel-item img {
+        height: 400px;
+    }
+    
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+    
+    .footer-container .footer-col:last-child {
+        grid-column: span 2;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        position: absolute;
+        left: 5%;
+        z-index: 1001;
+    }
+    
+    .navbar {
+        justify-content: center;
+        position: relative;
+        height: 70px;
+    }
+    
+    .logo {
+        flex: 0 1 auto;
+        margin: 0 auto;
+    }
+    
+    .logo img {
+        height: 50px;
+    }
+    
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--primary-color);
+        flex-direction: column;
+        align-items: center;
+        padding: 0.8rem 0;
+        gap: 0;
+    }
+    
+    .nav-links.show {
+        display: flex;
+    }
+    
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .nav-links a {
+        display: block;
+        padding: 0.8rem;
+        border-radius: 0;
+    }
+    
+    .carousel-item img {
+        height: 300px;
+    }
+    
+    .carousel-caption {
+        display: block !important;
+        bottom: 20px;
+        padding: 0.5rem;
+    }
+    
+    .carousel-caption h5 {
+        font-size: 1rem;
+    }
+    
+    .Presentation {
+        padding: 2rem 5%;
+    }
+    
+    .Histoire, .Facultes {
+        padding: 1.5rem;
+    }
+    
+    .Histoire h2, .Facultes h2 {
+        font-size: 1.5rem;
+    }
+    
+    .Choisir {
+        padding: 3rem 5%;
+    }
+    
+    .Choisir h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .choix-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats {
+        padding: 3rem 5%;
+    }
+    
+    .stats h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .stat {
+        padding: 1.5rem;
+    }
+    
+    .stat h3 {
+        font-size: 2rem;
+    }
+    
+    .footer {
+        padding: 1rem 4% 0.3rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .footer-container .footer-col:last-child {
+        grid-column: auto;
+    }
+    
+    .footer-col {
+        text-align: center;
+    }
+    
+    .footer-col h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+    }
+    
+    .footer-col .phone {
+        justify-content: center;
+    }
+    
+    .footer-col .contact-info li {
+        justify-content: center;
+    }
+    
+    .copyright {
+        padding: 0.6rem 0 0.2rem;
+        margin-top: 0.8rem;
+        font-size: 0.7rem;
+    }
+}
+
+/* Ti mobile */
+@media screen and (max-width: 480px) {
+    .logo img {
+        height: 45px;
+    }
+    
+    .navbar {
+        height: 65px;
+    }
+    
+    .carousel-item img {
+        height: 250px;
+    }
+    
+    .carousel-caption {
+        padding: 0.3rem;
+    }
+    
+    .carousel-caption h5 {
+        font-size: 0.9rem;
+    }
+    
+    .Presentation, .Choisir, .stats {
+        padding: 2rem 4%;
+    }
+    
+    .choix {
+        padding: 1.5rem;
+    }
+    
+    .stat i {
+        font-size: 2.5rem;
+    }
+    
+    .stat h3 {
+        font-size: 1.8rem;
+    }
+    
+    .footer {
+        padding: 0.8rem 3% 0.2rem;
+    }
+    
+    .footer-col h3 {
+        font-size: 1.3rem;
+    }
+    
+    .footer-col h4 {
+        font-size: 1rem;
+    }
+    
+    .copyright {
+        font-size: 0.65rem;
+    }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.Hero, .Presentation, .Choisir, .stats {
+    animation: fadeIn 1s ease-out;
+}
+
+/* ===== UTILITAIRES ===== */
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-light {
+    background: var(--bg-light) !important;
+}
+
+.shadow {
+    box-shadow: var(--shadow) !important;
+}
+
+.rounded {
+    border-radius: 10px !important;
+}
+
+/* ===== CORRECTIONS BOOTSTRAP ===== */
+.container-main {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.carousel-indicators button {
+    background-color: var(--primary-color) !important;
+}
+
+.carousel-indicators .active {
+    background-color: var(--secondary-color) !important;
+}
