@@ -44,6 +44,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
+    padding-right: 130px;
 }
 
 .logo img {
@@ -94,6 +95,31 @@ main {
     max-width: 1400px;
     margin: 100px auto 0;
     padding: 0;
+}
+.page-banner {
+    background: linear-gradient(135deg, var(--primary-color), #002244);
+    color: var(--white);
+    text-align: center;
+    padding: 3rem 1rem;
+    border-radius: 15px;
+    margin-bottom: 3rem;
+    box-shadow: var(--shadow);
+
+}
+.banner-content{
+    margin-top: 2rem !important;
+}
+
+.page-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
+}
+
+.page-banner p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease;
 }
 
 /* ===== CORPS SECTION ===== */

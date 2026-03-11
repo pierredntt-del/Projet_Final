@@ -44,6 +44,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
+    padding-right: 100px;
 }
 
 .logo img {
@@ -75,8 +76,7 @@ body {
     font-size: 1rem;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
+.nav-links a:hover {
     background: var(--secondary-color);
     color: var(--primary-color);
 }

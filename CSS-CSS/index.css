@@ -44,6 +44,7 @@ body {
     flex: 1;
     display: flex;
     justify-content: center;
+    padding-right: 100px;
 }
 
 .logo img {
@@ -94,6 +95,28 @@ main {
     margin: 100px auto 0;
     padding: 1.5rem 0;
     min-height: 400px;
+}
+
+.page-banner {
+    background: linear-gradient(135deg, var(--primary-color), #002244);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 1rem;
+    border-radius: 15px;
+    margin-bottom: 4rem;
+    box-shadow: var(--shadow);
+}
+
+.page-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
+}
+
+.page-banner p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease;
 }
 
 /* ===== HERO SECTION ===== */

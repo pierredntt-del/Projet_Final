@@ -94,12 +94,34 @@ main {
     padding: 2rem 0;
     background: rgba(217, 227, 237, 0.299);
 }
+.page-banner {
+    background: linear-gradient(135deg, var(--primary-color), #002244);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 1rem;
+    border-radius: 15px;
+    margin-bottom: 4rem;
+    box-shadow: var(--shadow);
+}
+
+.page-banner h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1s ease;
+}
+
+.page-banner p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    animation: fadeInUp 1s ease;
+}
 
 /* ===== PARAGRAPHES ===== */
 .paragraphe {
     display: flex;
     gap: 2rem;
     margin-bottom: 3rem;
+    
 }
 
 .paragraphe p {
@@ -111,6 +133,8 @@ main {
     color: var(--text-dark);
     box-shadow: var(--shadow);
     text-align: justify;
+   
+    
 }
 
 .paragraphe p:first-child {
