@@ -187,6 +187,7 @@ main {
     height: auto;
     display: block;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .histoire-figure:hover img {
@@ -305,6 +306,7 @@ main {
     height: 250px;
     object-fit: cover;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .team-figure:hover img {
@@ -361,6 +363,7 @@ main {
     height: 250px;
     object-fit: cover;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 .campus-figure:hover img {
@@ -387,6 +390,67 @@ main {
 
 .campus-figure figcaption i {
     color: var(--secondary-color);
+}
+
+/* ===== LIGHTBOX POU AGRANDI IMAJ ===== */
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn 0.3s ease;
+}
+
+.lightbox:target {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+    animation: zoomIn 0.3s ease;
+}
+
+.lightbox-content img {
+    max-width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.lightbox-content p {
+    color: var(--white);
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    background: rgba(0, 51, 102, 0.7);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    color: var(--white);
+    font-size: 40px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: var(--transition);
+    line-height: 1;
+}
+
+.close:hover {
+    color: var(--secondary-color);
+    transform: scale(1.2);
 }
 
 /* ===== FOOTER ===== */
@@ -538,6 +602,17 @@ main {
     }
 }
 
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 section {
     animation: fadeIn 1s ease-out;
 }
@@ -565,6 +640,10 @@ section {
     
     .section-header h2 {
         font-size: 2.2rem;
+    }
+    
+    .lightbox-content img {
+        max-height: 70vh;
     }
     
     .footer-container {
@@ -595,6 +674,7 @@ section {
     .logo {
         flex: 0 1 auto;
         margin: 0 auto;
+        padding-right: 0;
     }
     
     .logo img {
@@ -677,6 +757,15 @@ section {
         gap: 1.5rem;
     }
     
+    .lightbox-content p {
+        font-size: 1rem;
+    }
+    
+    .close {
+        top: -30px;
+        font-size: 30px;
+    }
+    
     .footer {
         padding: 1rem 4% 0.3rem;
     }
@@ -742,6 +831,10 @@ section {
         height: 200px;
     }
     
+    .lightbox-content p {
+        font-size: 0.9rem;
+    }
+    
     .footer {
         padding: 0.8rem 3% 0.2rem;
     }
@@ -756,5 +849,62 @@ section {
     
     .copyright {
         font-size: 0.65rem;
+    }
+}
+/* ===== NAVIGATION LIGHTBOX ===== */
+.nav-prev, .nav-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--white);
+    font-size: 2rem;
+    text-decoration: none;
+    background: rgba(0, 51, 102, 0.5);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+    z-index: 2100;
+}
+
+.nav-prev {
+    left: 20px;
+}
+
+.nav-next {
+    right: 20px;
+}
+
+.nav-prev:hover, .nav-next:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Responsive navigasyon */
+@media screen and (max-width: 768px) {
+    .nav-prev, .nav-next {
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+    
+    .nav-prev {
+        left: 10px;
+    }
+    
+    .nav-next {
+        right: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .nav-prev, .nav-next {
+        width: 35px;
+        height: 35px;
+        font-size: 1.2rem;
     }
 }
